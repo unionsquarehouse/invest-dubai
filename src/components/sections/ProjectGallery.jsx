@@ -6,111 +6,56 @@ import Image from 'next/image';
 
 // ---- Sample data (add price + count to match UI) ----
 
- const projects = [
-    {
-      id: 1,
-      title: "Townsquare",
-      type: "Apartment",
-      priceLabel: 'Starting From',
-      price: "AED 1.14M",
-      location: "8-10%",
-      image: "/assets/townsquare.webp",
-      features: [
-        "1-3 Bedrooms",
-        "Family Community",
-        "Central Park",
-        "Retail Hub",
-      ],
-      completion: "250+",
-      units: "50k sqm",
-      description:
-        "Modern apartments in a vibrant family-oriented community with world-class amenities.",
-      highlights: [
-        "Swimming Pools",
-        "Fitness Center",
-        "Kids Play Area",
-        "Retail Outlets",
-      ],
-    },
-    {
-      id: 2,
-      title: "Grand Polo",
-      type: "Villa / Townhouse",
-      priceLabel: 'Starting From',
-      price: "AED 5.67M",
-      location: "Dubai Sports City",
-      image: "/assets/grand-polo.jpeg",
-      features: [
-        "3-5 Bedrooms",
-        "Private Gardens",
-        "Golf Course Views",
-        "Premium Finishes",
-      ],
-      completion: "2029",
-      units: "180",
-      description:
-        "Luxury villas and townhouses overlooking luxurious equestrian communitiy with premium amenities.",
-      highlights: [
-        "Golf Course Access",
-        "Private Pool",
-        "Maid's Room",
-        "Premium Location",
-      ],
-    },
-    {
-      id: 3,
-      title: "Aviaan",
-      type: "Hotel Apartment",
-      priceLabel: 'Starting From',
-      price: "AED 1.3M",
-      location: "Dubai South",
-      image: "/assets/aviaan.jpg",
-      features: [
-        "Studio-2 Bed",
-        "Hotel Services",
-        "Investment Ready",
-        "Airport Proximity",
-      ],
-      completion: "2025",
-      units: "400+",
-      description:
-        "Premium hotel apartments with guaranteed rental returns and world-class hospitality services.",
-      highlights: [
-        "Guaranteed ROI",
-        "Hotel Management",
-        "Concierge Service",
-        "Airport Access",
-      ],
-    },
-    {
-      id: 4,
-      title: "Lumena",
-      type: "Commercial",
-      priceLabel: 'Starting From',
-      price: "AED 2.5M",
-      location: "Business Bay",
-      image: "/assets/lumena.webp",
-      features: ["Office Spaces", "Retail Units", "Prime Location", "High ROI"],
-      completion: "2026",
-      units: "200+",
-      description:
-        "Premium commercial spaces in the heart of Dubai's business district with exceptional returns.",
-      highlights: [
-        "Business Bay",
-        "Metro Access",
-        "Premium Offices",
-        "Retail Spaces",
-      ],
-    },
-  ];
+const projects = [
+  {
+    id: 1,
+    title: 'Townsquare',
+    priceLabel: 'Starting From',
+    price: 'AED 1.14M',
+    location: 'Business Bay, Dubai',
+    image: '/assets/townsquare.webp',
+    description:
+      'Modern apartments in a vibrant family-oriented community with world-class amenities.',
+  },
+  {
+    id: 2,
+    title: 'Grand Polo',
+    priceLabel: 'Starting From',
+    price: 'AED 5.67M',
+    location: 'Dubai Sports City',
+    image: '/assets/grand-polo.jpeg',
 
+    description:
+      'Luxury villas and townhouses overlooking luxurious equestrian communitiy with premium amenities.',
+  },
+  {
+    id: 3,
+    title: 'Aviaan',
+    priceLabel: 'Starting From',
+    price: 'AED 1.3M',
+    location: 'Dubai South',
+    image: '/assets/aviaan.jpg',
+
+    description:
+      'Premium hotel apartments with guaranteed rental returns and world-class hospitality services.',
+  },
+  {
+    id: 4,
+    title: 'Lumena',
+    priceLabel: 'Starting From',
+    price: 'AED 2.5M',
+    location: 'Business Bay',
+    image: '/assets/lumena.webp',
+    description:
+      "Premium commercial spaces in the heart of Dubai's business district with exceptional returns.",
+  },
+];
 
 export default function ProjectGallery() {
   const [i, setI] = useState(0);
   const p = projects[i];
 
-  const go = (dir) =>
-    setI((prev) => (prev + dir + projects.length) % projects.length);
+  const go = (dir) => setI((prev) => (prev + dir + projects.length) % projects.length);
 
   // Keyboard arrows
   useEffect(() => {
@@ -162,9 +107,7 @@ export default function ProjectGallery() {
           <div className="text-white">
             {/* Price */}
             <div className="mb-3">
-              <div className="text-[11px] sm:text-xs md:text-sm text-white/80">
-                {p.priceLabel}
-              </div>
+              <div className="text-[11px] sm:text-xs md:text-sm text-white/80">{p.priceLabel}</div>
               <div className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight">
                 {p.price}
               </div>
@@ -174,9 +117,7 @@ export default function ProjectGallery() {
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <span className="h-2 w-2 rounded-full bg-white/80 inline-block" />
-                <span className="text-xs sm:text-sm md:text-base">
-                  {p.location}
-                </span>
+                <span className="text-xs sm:text-sm md:text-base">{p.location}</span>
               </div>
 
               <div className="flex items-center gap-3 sm:gap-4">
@@ -202,8 +143,7 @@ export default function ProjectGallery() {
                   <div className="h-12 w-12 sm:h-20 sm:w-20 rounded-full bg-[#FF5A1F] shadow-[0_0_0_10px_rgba(251,87,17,0.3)]" />
                   <div className="absolute inset-0 grid place-items-center">
                     <span className="text-[11px] sm:text-xs font-semibold">
-                      {String(i + 1).padStart(2, '0')}/ 
-                      {String(projects.length).padStart(2, '0')}
+                      {String(i + 1).padStart(2, '0')}/{String(projects.length).padStart(2, '0')}
                     </span>
                   </div>
                 </div>

@@ -13,10 +13,10 @@ function ProvenExcellence() {
   };
 
   const stats = [
-    { value: '150%', label: 'Capital Appreciation', prefix: 'Up to' },
+    { value: '$544K%', label: 'Golden Visa',  },
     { value: '8-12%', label: 'Avg Rental Yield' },
-    { value: '2500+', label: 'Global Investors', red: true },
-    { value: '168,000+', label: 'Properties Sold Last Year', red: true },
+    { value: '6700+', label: 'Millionaires Investors shifted in 2024'},
+    { value: '168,000+', label: 'Properties Sold Last Year'},
   ];
 
   return (
@@ -52,11 +52,6 @@ function ProvenExcellence() {
                   {/* number + optional small prefix */}
                   <div className="relative">
                     <div className="flex justify-center items-center gap-2">
-                      {s.prefix && (
-                        <span className="text-base tracking-tight text-gray-500">
-                          {s.prefix}
-                        </span>
-                      )}
                       <span
                         className={[
                           'font-semibold tracking-tight',

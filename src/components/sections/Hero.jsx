@@ -1,7 +1,7 @@
-"use client";
-import React from "react";
-import { motion } from "framer-motion";
-import Image from "next/image";
+'use client';
+import React from 'react';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
@@ -29,8 +29,7 @@ export default function Hero() {
           animate="animate"
           transition={{ delay: 0.2 }}
         >
-          Where visionary investments meet infinite possibilities in the world&apos;s most dynamic
-          financial hub
+          Make your Dubai Real Estate dream a reality
         </motion.p>
 
         <motion.div

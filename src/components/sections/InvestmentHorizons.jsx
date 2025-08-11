@@ -28,8 +28,8 @@ const InvestmentHorizons = () => {
           {/* Top red stats (left, center, right) */}
           <div className="w-full flex items-end justify-between mb-6 md:mb-10 md:w-[92%] lg:w-[88%] mx-auto">
             <div className="text-left drop-shadow">
-              <p className="text-white text-2xl md:text-4xl font-extrabold leading-none">$544k</p>
-              <p className="text-white text-xs md:text-base  mt-1">Golden Visa</p>
+              <p className="text-white text-2xl md:text-4xl font-extrabold leading-none">$438</p>
+              <p className="text-white text-xs md:text-base  mt-1">Per Sq.Ft</p>
             </div>
 
             <div className="text-center drop-shadow">
@@ -38,8 +38,8 @@ const InvestmentHorizons = () => {
             </div>
 
             <div className="text-right drop-shadow">
-              <p className="text-white text-2xl md:text-4xl font-extrabold leading-none">1%</p>
-              <p className="text-white text-xs md:text-base  mt-1">Flexible Payment Plans</p>
+              <p className="text-white text-2xl md:text-4xl font-extrabold leading-none">Flexible</p>
+              <p className="text-white text-xs md:text-base  mt-1">Payment Plans</p>
             </div>
           </div>
 
