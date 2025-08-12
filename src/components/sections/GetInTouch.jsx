@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
@@ -33,21 +33,18 @@ function Footer() {
   return (
     <footer className="w-full bg-black text-white font-inter">
       {/* Main Footer Section */}
-     
 
       {/* Bottom Bar */}
       <div className="">
-        <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-gray-400">
-            &copy; Copyright 2025, All Rights Reserved
-          </p>
+        <div className="w-[93vw] xl:w-[80vw] mx-auto  py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-sm text-gray-400">&copy; Copyright 2025, All Rights Reserved</p>
           <div className="flex items-center gap-6">
             {FOOTER_LINKS.map((link, index) => (
               <a
                 key={index}
                 href={link.href}
                 target="_blank"
-                className="text-sm text-gray-400 hover:text-blue-500 transition-colors"
+                className="text-sm text-gray-400 hover:text-[#9F3349] transition-colors"
               >
                 {link.name}
               </a>

@@ -10,11 +10,11 @@ const fadeInUp = {
 
 export default function Hero() {
   return (
-    <section className="relative w-full bg-white overflow-hidden">
-      {/* Top White Section with Text */}
-      <div className="relative z-10 flex flex-col items-center justify-center py-20 text-center px-4">
+    <section className="relative w-full overflow-hidden bg-white">
+      {/* Top content */}
+      <div className="relative z-10 flex flex-col items-center justify-center px-4 py-16 sm:py-20 md:py-24 text-center">
         <motion.h1
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-['Playfair_Display'] text-gray-900"
+          className="font-['Playfair_Display'] font-bold text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-gray-900"
           variants={fadeInUp}
           initial="initial"
           animate="animate"
@@ -23,13 +23,13 @@ export default function Hero() {
         </motion.h1>
 
         <motion.p
-          className="mt-3 text-sm sm:text-base md:text-lg text-gray-600 max-w-lg"
+          className="mt-3 max-w-xl text-sm sm:text-base md:text-lg text-gray-600"
           variants={fadeInUp}
           initial="initial"
           animate="animate"
           transition={{ delay: 0.2 }}
         >
-          Make your Dubai Real Estate dream a reality
+          Make your Dubai Real Estate dream a reality
         </motion.p>
 
         <motion.div
@@ -39,12 +39,15 @@ export default function Hero() {
           animate="animate"
           transition={{ delay: 0.4 }}
           whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.97 }}
         >
-          <button className="flex items-center gap-2 px-6 py-3 rounded-full bg-black text-white font-medium shadow-lg hover:bg-gray-900 transition">
-            Explore Opportunities
+          <button className="inline-flex items-center gap-2 rounded-full bg-[#9F3349] px-6 py-3 sm:px-8 sm:py-4 text-white font-medium shadow-lg transition hover:bg-black/90">
+            <span className="text-sm sm:text-base md:text-lg">Explore Opportunities</span>
             <motion.span
-              animate={{ x: [0, 5, 0] }}
+              className="text-base sm:text-lg md:text-xl"
+              animate={{ x: [0, 6, 0] }}
               transition={{ repeat: Infinity, duration: 1.5 }}
+              aria-hidden="true"
             >
               ➜
             </motion.span>
@@ -52,17 +55,17 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Skyline Image Section */}
-      <div className="relative w-full h-[80vh]">
+      {/* Skyline image */}
+      <div className="relative w-full min-h-[60vh] sm:min-h-[70vh] md:min-h-[80vh]">
         <Image
-          src="/images/dubai-skyline.png" // Replace with your image
+          src="/images/dubai-skyline.png"
           alt="Dubai Skyline"
           fill
-          className="object-cover object-bottom"
           priority
+          className="object-cover object-bottom"
         />
-        {/* Top fade to white */}
-        <div className="absolute top-0 left-0 w-full h-[20vh] bg-gradient-to-b from-white to-transparent"></div>
+        {/* top fade to white so text blends nicely */}
+        <div className="pointer-events-none absolute left-0 top-0 h-[20vh] w-full bg-gradient-to-b from-white to-transparent" />
       </div>
     </section>
   );

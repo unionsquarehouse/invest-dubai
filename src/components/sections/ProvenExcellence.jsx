@@ -8,23 +8,18 @@ function ProvenExcellence() {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
-  const stagger = {
-    animate: { transition: { staggerChildren: 0.08 } },
-  };
+  const stagger = { animate: { transition: { staggerChildren: 0.08 } } };
 
   const stats = [
-    { value: '$544K%', label: 'Golden Visa',  },
-    { value: '8-12%', label: 'Avg Rental Yield' },
-    { value: '6700+', label: 'Millionaires Investors shifted in 2024'},
-    { value: '168,000+', label: 'Properties Sold Last Year'},
+    { value: '8-12%', label: 'Rental Yield' },
+    { value: '45%', label: 'Capital Appreciation' },
+    { value: '0%', label: 'Taxation Policy' },
+    { value: '16.5%', label: 'Increase In Residential Price Index' },
   ];
 
   return (
-    <section
-      id="excellence"
-      className="w-full border-b border-gray-200 bg-white py-32"
-    >
-      <div className="w-[92vw] xl:w-[80vw] mx-auto">
+    <section id="excellence" className="w-full border-b border-gray-200 bg-white py-16 sm:py-20 md:py-24">
+      <div className="w-[93vw] xl:w-[80vw] mx-auto">
         <motion.div
           variants={stagger}
           initial="initial"
@@ -33,49 +28,39 @@ function ProvenExcellence() {
           className="flex flex-col items-center gap-2 md:gap-3"
         >
           {/* Title */}
-
           <motion.h2
             variants={fadeInUp}
-            className="text-[34px] md:text-5xl leading-tight tracking-[0.02em] font-['Playfair_Display'] text-center mb-6 md:mb-8 uppercase"
+            className="mb-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-['Playfair_Display'] text-center md:mb-8"
           >
             What’s Inside Dubai Real Estate
           </motion.h2>
 
-          {/* Stats row */}
+          {/* Stats grid */}
           <motion.div
             variants={stagger}
-            className="w-full flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-0 pt-1"
+            className="w-full grid grid-cols-4 gap-6 sm:gap-8 pt-1"
           >
-            {stats.map((s, i) => (
-              <React.Fragment key={s.label}>
-                <motion.div variants={fadeInUp} className="flex flex-col items-center">
-                  {/* number + optional small prefix */}
-                  <div className="relative">
-                    <div className="flex justify-center items-center gap-2">
-                      <span
-                        className={[
-                          'font-semibold tracking-tight',
-                          'text-[22px] sm:text-[24px] md:text-4xl',
-                          
-                          "font-['Manrope']",
-                        ].join(' ')}
-                      >
-                        {s.value}
-                      </span>
-                    </div>
-                    
-                     
-                  </div>
-
-                  {/* caption */}
-                  <span className="mt-1 text-[11px] sm:text-[12px] md:text-base text-gray-500">
-                    {s.label}
+            {stats.map((s) => (
+              <motion.div
+                key={s.label}
+                variants={fadeInUp}
+                className="flex flex-col items-center text-center col-span-2 lg:col-span-1"
+              >
+                {/* number */}
+                <div className="flex items-center justify-center gap-2 text-[#9F3349]">
+                  <span className="font-semibold text-3xl md:text-4xl xl:text-5xl">
+                    {s.value}
                   </span>
-                </motion.div>
+                </div>
 
-                {/* vertical divider (hide after last) */}
-                {i < stats.length - 1 && <div className="hidden sm:block h-6 w-px bg-gray-200" />}
-              </React.Fragment>
+                {/* caption */}
+                <span
+                  className="mt-1 text-xs sm:text-sm md:text-base font-bold"
+                  style={{ fontFamily: 'Manrope' }}
+                >
+                  {s.label}
+                </span>
+              </motion.div>
             ))}
           </motion.div>
         </motion.div>

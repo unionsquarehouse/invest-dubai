@@ -1,74 +1,120 @@
 'use client';
 
+import React from 'react';
 import Image from 'next/image';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+// Custom styles for Swiper arrows
+const arrowStyles = `
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #9F3349 !important;
+    top: 45% !important;
+    transition: color 0.3s ease;
+  }
+  .swiper-button-next:hover,
+  .swiper-button-prev:hover {
+    color: #7d283a !important; /* slightly darker on hover */
+  }
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 1.5rem !important;
+    font-weight: bold;
+  }
+    /* Pagination bullets */
+  .swiper-pagination-bullet {
+    background: #9F3349 !important;
+    opacity: 0.5 !important;
+    transition: opacity 0.3s ease;
+    width:14px;
+    height:14px;
+    
+  }
+  
+`;
 
 const InvestmentHorizons = () => {
+  const features = [
+    {
+      image: '/assets/golden-visa-red.png',
+      title: 'Golden Visa',
+      description: 'Invest $544K & Get Your UAE Golden Visa',
+      alt: 'Icon for Golden Visa',
+    },
+    {
+      image: '/assets/investment-hub-red.png',
+      title: 'Safe Investment Hub',
+      description: 'Dubai Is Ranked As #2 Safest Investment Hub For Investors Globally.',
+      alt: 'Icon for Safe Investment Hub',
+    },
+    {
+      image: '/assets/low-entry-point-red.png',
+      title: 'Low Entry Point',
+      description: 'Dubai Offers Properties Starting From Just $204k.',
+      alt: 'Icon for Low Entry Point',
+    },
+    {
+      image: '/assets/payment-plan-red.png',
+      title: 'Flexible Payment Plans',
+      description:
+        'Dubai Offers Payment Plans From 1% Per Month, Extending Up To 3 Years Post-Handover.',
+      alt: 'Icon for Flexible Payment Plans',
+    },
+    {
+      image: '/assets/infra-growth-red.png',
+      title: 'Strong Infrastructure Growth',
+      description:
+        'Upcoming Etihad Rail, Blue Line Metro, And Dubai Design District Under D33 Are Set To Boost Dubai Real Estate Profits By 25%+',
+      alt: 'Icon for Strong Infrastructure Growth',
+    },
+    {
+      image: '/assets/properties-all-investors-red.png',
+      title: 'Properties For All Investors',
+      description:
+        'From Beachfront Apartments, Family Communities To Luxurious Golf Villa, Dubai Delivers All',
+      alt: 'Icon for Properties For All Investors',
+    },
+  ];
+
   return (
-    <section className=" w-[92vw] xl:w-[80vw] mx-auto">
-      <h2 className="text-[34px] md:text-5xl leading-tight tracking-[0.02em] font-['Playfair_Display']  text-center mb-6 md:mb-8 uppercase">
-        INVESTMENT HORIZONS
-      </h2>
+    <div className="bg-white py-12 px-4">
+      {/* Inject custom Swiper arrow styles */}
+      <style>{arrowStyles}</style>
 
-      <div className="relative rounded-2xl overflow-hidden shadow-lg">
-        {/* Background Image */}
-        <Image
-          src="/images/investment-bg.jpg" /* put file in /public/images */
-          alt="Investment Property"
-          width={1600}
-          height={800}
-          priority
-          className="w-full h-[80vh] object-cover"
-        />
+      <div className="w-[93vw] xl:w-[80vw] mx-auto text-center">
+        <h2 className="text-3xl md:text-6xl font-['Playfair_Display'] text-center mb-6 md:mb-8">
+          Investment Horizons
+        </h2>
 
-        {/* Bottom-to-top dark gradient to match screenshot */}
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/75 via-black/40 to-transparent" />
-
-        {/* Overlay Content */}
-        <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-6 md:p-8 lg:p-10  ">
-          {/* Top red stats (left, center, right) */}
-          <div className="w-full flex items-end justify-between mb-6 md:mb-10 md:w-[92%] lg:w-[88%] mx-auto">
-            <div className="text-left drop-shadow">
-              <p className="text-white text-2xl md:text-4xl font-extrabold leading-none">$438</p>
-              <p className="text-white text-xs md:text-base  mt-1">Per Sq.Ft</p>
-            </div>
-
-            <div className="text-center drop-shadow">
-              <p className="text-white text-2xl md:text-4xl font-extrabold leading-none">$204k</p>
-              <p className="text-white text-xs md:text-base  mt-1">Starting Price</p>
-            </div>
-
-            <div className="text-right drop-shadow">
-              <p className="text-white text-2xl md:text-4xl font-extrabold leading-none">Flexible</p>
-              <p className="text-white text-xs md:text-base  mt-1">Payment Plans</p>
-            </div>
-          </div>
-
-          {/* Bottom rounded pill with items + dividers */}
-          <div className="w-full flex justify-center">
-            <div className="w-full md:w-[92%] lg:w-[88%] bg-white/10 backdrop-blur-sm text-white border border-white/25 rounded-lg px-3 py-2 md:px-6 md:py-3">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-0 text-center text-[12px] md:text-base">
-                {[
-                  'Prime Locations',
-                  'Guaranteed ROI',
-                  'Luxury Amenities',
-                  'Property Management',
-                ].map((item, i, arr) => (
-                  <div
-                    key={item}
-                    className={[
-                      'px-2 md:px-4',
-                      i !== arr.length - 1 ? 'border-r border-white/30' : '',
-                    ].join(' ')}
-                  >
-                    {item}
-                  </div>
-                ))}
+        <Swiper
+          modules={[Navigation, Pagination]}
+          navigation
+          pagination={{ clickable: true }}
+          spaceBetween={24}
+          slidesPerView={1}
+          breakpoints={{
+            640: { slidesPerView: 2 },
+            1024: { slidesPerView: 4 },
+          }}
+        >
+          {features.map((feature, index) => (
+            <SwiperSlide key={index}>
+              <div className="flex flex-col items-center pt-10 pb-14 border border-gray-200 rounded-lg shadow-sm h-full">
+                <div className="flex justify-center mb-4 w-28 ">
+                  <Image src={feature.image} alt={feature.alt} width={120} height={120} />
+                </div>
+                <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-2">{feature.title}</h3>
+                <p className="text-sm sm:text-base text-gray-600">{feature.description}</p>
               </div>
-            </div>
-          </div>
-        </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
-    </section>
+    </div>
   );
 };
 

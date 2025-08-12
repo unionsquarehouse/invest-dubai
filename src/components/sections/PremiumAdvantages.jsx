@@ -15,8 +15,7 @@ const TEXT_COLOR = '#4B5563';
 const SLICE_INFO = [
   {
     title: 'Golden Visa',
-    text:
-      'Long-term residency with world-class lifestyle benefits and family inclusion.',
+    text: 'Long-term residency with world-class lifestyle benefits and family inclusion.',
     features: [
       '10-Year Residency',
       '4 Family Members',
@@ -27,8 +26,7 @@ const SLICE_INFO = [
   },
   {
     title: 'Zero Tax Haven',
-    text:
-      'No personal income or capital gains tax with strong legal protection.',
+    text: 'No personal income or capital gains tax with strong legal protection.',
     features: [
       'No Income Tax',
       'No Capital Gains Tax',
@@ -39,8 +37,7 @@ const SLICE_INFO = [
   },
   {
     title: 'Strategic Location',
-    text:
-      'Gateway between East & West with unparalleled global connectivity.',
+    text: 'Gateway between East & West with unparalleled global connectivity.',
     features: [
       '8-hr reach to 2/3 of world',
       'Ultra-modern airports',
@@ -57,8 +54,7 @@ export default function PremiumAdvantagesClean() {
   const [locked, setLocked] = useState(false);
 
   const data = useMemo(() => {
-    const bg = (i) =>
-      active == null ? COLORS[i] : i === active ? COLORS[i] : FADES[i];
+    const bg = (i) => (active == null ? COLORS[i] : i === active ? COLORS[i] : FADES[i]);
 
     return {
       labels: SLICE_INFO.map((s) => s.title),
@@ -139,13 +135,12 @@ export default function PremiumAdvantagesClean() {
   const infoToShow = active !== null ? SLICE_INFO[active] : null;
 
   return (
-    <section className="py-16 px-4 md:px-8 w-full max-w-7xl mx-auto font-sans">
+    <section className="py-16 px-4 md:px-8 w-full w-[80vw] xl:w-[92vw] mx-auto font-sans">
       <h2 className="text-4xl md:text-6xl font-bold text-center mb-12 text-[#111827] tracking-wide">
         PREMIUM ADVANTAGES
       </h2>
       <p className="text-lg text-center text-gray-600 max-w-2xl mx-auto mb-16">
-        Explore the key benefits that make this a premier destination for
-        investment and lifestyle.
+        Explore the key benefits that make this a premier destination for investment and lifestyle.
       </p>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -174,9 +169,7 @@ export default function PremiumAdvantagesClean() {
 
           {infoToShow && (
             <div className="mt-8 w-full">
-              <h4 className="text-xl font-semibold text-gray-700 mb-3">
-                Key Features
-              </h4>
+              <h4 className="text-xl font-semibold text-gray-700 mb-3">Key Features</h4>
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 text-base text-gray-800">
                 {infoToShow.features.map((feature, index) => (
                   <li key={index} className="flex items-center">
