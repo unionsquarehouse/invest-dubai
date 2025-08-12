@@ -100,17 +100,17 @@ const FeatureValue = ({ feature }) => {
   switch (feature.type) {
     case 'price':
       return (
-        <span className="font-bold text-lg">
+        <span className="text-sm">
           {feature.value.split(' ')[0]}
         </span>
       );
     case 'percent':
       return (
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-center font-sans">
           <CountUp
             end={feature.value}
             duration={2}
-            className="font-bold text-xl"
+            className="text-sm"
             suffix="%"
           />
         </div>
@@ -122,7 +122,7 @@ const FeatureValue = ({ feature }) => {
         <FaTimesCircle className="text-[#9F3349] mx-auto text-2xl" />
       );
     default:
-      return <span className="font-medium text-sm">{feature.value}</span>;
+      return <span className=" text-sm font-sans">{feature.value}</span>;
   }
 };
 
@@ -151,6 +151,9 @@ export default function PropertyComparison() {
             },
             // Show 4 slides on screens >= 1024px (lg)
             1024: {
+              slidesPerView: 3,
+            },
+             1536: {
               slidesPerView: 4,
             },
           }}

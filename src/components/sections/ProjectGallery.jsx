@@ -16,7 +16,7 @@ const projects = [
   },
   {
     id: 2,
-    title: 'Grand Polo',
+    title: 'Grand Polo, Club & Resort',
     priceLabel: 'Starting From',
     price: ' $1.6M',
     location: 'Emaar South',
@@ -63,9 +63,9 @@ export default function ProjectGallery() {
   }, []);
 
   return (
-    <section className="bg-white pt-12 pb-10 xl:pb-40">
+    <section className="bg-white pb-10 xl:pb-40">
       <div className="mx-auto w-[93vw] xl:w-[80vw] text-center">
-        <h2 className="text-center text-4xl sm:text-6xl  font-['Playfair_Display'] mb-14 text-gray-800">
+        <h2 className="text-center text-4xl sm:text-6xl  font-['Playfair_Display'] mb-10 xl:mb-14 text-gray-800">
           Premium Projects
         </h2>
 
@@ -74,7 +74,7 @@ export default function ProjectGallery() {
           initial={{ opacity: 0.6, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.35 }}
-          className="relative h-80 sm:h-96 md:h-[70vh] rounded-2xl overflow-hidden text-left"
+          className="relative h-[50vh] md:h-[70vh] rounded-2xl overflow-hidden text-left"
         >
           {/* Background image */}
           <Image src={p.image} alt={p.title} fill priority className="object-cover" sizes="100vw" />
@@ -97,7 +97,7 @@ export default function ProjectGallery() {
               {/* Price */}
               <div className="mb-3">
                 <div className="text-xs sm:text-sm md:text-base text-white/80">{p.priceLabel}</div>
-                <div className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight">
+                <div className="text-2xl sm:text-3xl md:text-4xl font-extrabold ">
                   {p.price}
                 </div>
               </div>
