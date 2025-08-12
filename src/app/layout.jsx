@@ -2,7 +2,7 @@ import '../styles/index.css';
 const APP_NAME = "Invest In Dubai";
 const APP_DESCRIPTION =
   "Where visionary investments meet infinite possibilities in the world's most dynamic financial hub.";
-const APP_URL = "https://invest-dubai.vercel.app";
+const APP_URL = "https://investment.dubai-launch.com/";
 const APP_IMAGE = `${APP_URL}/images/investment-bg.jpg`;
 
 export const viewport = {

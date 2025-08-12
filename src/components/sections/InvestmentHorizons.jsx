@@ -103,12 +103,16 @@ const InvestmentHorizons = () => {
         >
           {features.map((feature, index) => (
             <SwiperSlide key={index}>
-              <div className="flex flex-col items-center pt-10 pb-14  h-full">
-                <div className="flex justify-center mb-4 w-28 ">
+              <div className="flex flex-col items-center pt-10 pb-14 h-full">
+                <div className="flex justify-center mb-4 w-28">
                   <Image src={feature.image} alt={feature.alt} width={120} height={120} />
                 </div>
-                <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-2">{feature.title}</h3>
-                <p className="text-sm sm:text-base text-gray-600">{feature.description}</p>
+                <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-2 text-center">
+                  {feature.title}
+                </h3>
+                <p className="text-sm sm:text-base max-w-[320px] text-gray-600 text-center">
+                  {feature.description}
+                </p>
               </div>
             </SwiperSlide>
           ))}
