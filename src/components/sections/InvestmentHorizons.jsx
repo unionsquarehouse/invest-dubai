@@ -75,7 +75,7 @@ const InvestmentHorizons = () => {
       image: '/assets/properties-all-investors-red.png',
       title: 'Properties For All Investors',
       description:
-        'From Beachfront Apartments, Family Communities To Luxurious Golf Villa, Dubai Delivers All',
+        'From Beachfront Apartments, Family Communities To Luxurious Golf Villas, Dubai Delivers All',
       alt: 'Icon for Properties For All Investors',
     },
   ];
