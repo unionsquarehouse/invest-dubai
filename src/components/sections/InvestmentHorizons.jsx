@@ -30,8 +30,8 @@ const arrowStyles = `
     background: #9F3349 !important;
     opacity: 0.5 !important;
     transition: opacity 0.3s ease;
-    width:14px;
-    height:14px;
+    width:8px;
+    height:8px;
     
   }
   

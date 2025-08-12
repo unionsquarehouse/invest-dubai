@@ -12,16 +12,73 @@ import 'swiper/css/pagination';
 
 // Custom styles for Swiper arrows and pagination
 const swiperStyles = `
+  .swiper {
+    padding-bottom: 60px !important;
+  }
   .swiper-button-next,
   .swiper-button-prev {
+    width: 32px !important;
+    height: 32px !important;
+    background: white !important;
+    border: 2px solid #9F3349 !important;
+    border-radius: 50% !important;
     color: #9F3349 !important;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12) !important;
+    top: auto !important;
+    bottom: 14px !important;
+    margin-top: 0 !important;
+    transition: all 0.3s ease !important;
+  }
+  .swiper-button-next:hover,
+  .swiper-button-prev:hover {
+    background: #9F3349 !important;
+    color: white !important;
+    transform: scale(1.1) !important;
   }
   .swiper-button-next::after,
   .swiper-button-prev::after {
-    font-size: 1.5rem !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+  }
+  .swiper-button-prev {
+    left: calc(50% - 100px) !important;
+  }
+  .swiper-button-next {
+    right: calc(50% - 100px) !important;
+  }
+  .swiper-button-disabled {
+    opacity: 0.5 !important;
+    cursor: not-allowed !important;
+  }
+  .swiper-button-disabled:hover {
+    background: white !important;
+    color: #9F3349 !important;
+    transform: none !important;
+  }
+  .swiper-pagination {
+    bottom: 24px !important;
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: auto !important;
+    height: 8px !important;
+    margin-top: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
   .swiper-pagination-bullet {
+    width: 8px !important;
+    height: 8px !important;
+    background: #d1d5db !important;
+    opacity: 1 !important;
+    margin: 0 4px !important;
+    transition: all 0.3s ease !important;
+    display: inline-block !important;
+  }
+  .swiper-pagination-bullet-active {
     background: #9F3349 !important;
+    transform: scale(1.3) !important;
   }
 `;
 
@@ -130,38 +187,45 @@ export default function PropertyComparison() {
   const [hoveredCard, setHoveredCard] = useState(null);
 
   return (
-    <section className="bg-white py-10 xl:py-32 px-4 font-sans">
+    <section className="bg-white py-10 xl:py-32  font-sans">
       <style>{swiperStyles}</style>
       <div className="w-[93vw] xl:w-[80vw] mx-auto">
         <h2 className="text-center text-4xl sm:text-6xl font-['Playfair_Display'] mb-14 text-gray-800">
           Property Investment Comparison
         </h2>
 
-        {/* This div is now a Swiper container instead of a grid */}
-        <Swiper
-          modules={[Navigation, Pagination]}
-          navigation
-          pagination={{ clickable: true }}
-          spaceBetween={24}
-          slidesPerView={1}
-          breakpoints={{
-            // Show 2 slides on screens >= 640px (sm)
-            640: {
-              slidesPerView: 2,
-            },
-            // Show 4 slides on screens >= 1024px (lg)
-            1024: {
-              slidesPerView: 3,
-            },
-             1536: {
-              slidesPerView: 4,
-            },
-          }}
-        >
+        <div className="relative">
+          <Swiper
+            modules={[Navigation, Pagination]}
+            navigation={{
+              enabled: true,
+            }}
+            pagination={{ 
+              clickable: true,
+              dynamicBullets: false,
+            }}
+            spaceBetween={24}
+            slidesPerView={1}
+            loop={false}
+            breakpoints={{
+              // Show 2 slides on screens >= 640px (sm)
+              640: {
+                slidesPerView: 2,
+              },
+              // Show 3 slides on screens >= 1024px (lg)
+              1024: {
+                slidesPerView: 3,
+              },
+              // Show 4 slides on screens >= 1536px (2xl)
+              1536: {
+                slidesPerView: 4,
+              },
+            }}
+          >
           {PROPERTY_DATA.map((item, index) => (
             <SwiperSlide key={index}>
               <div
-                className={`group relative rounded-xl px-6 py-10 mb-16 transition-all duration-500 ease-in-out cursor-pointer h-full flex flex-col justify-between 
+                className={`group relative rounded-xl px-6 py-10 transition-all duration-500 ease-in-out cursor-pointer h-full flex flex-col justify-between 
                   ${item.isPrimary ? 'bg-black text-white shadow-2xl' : 'bg-gray-50 hover:bg-gray-100 hover:shadow-lg'}
                   ${hoveredCard === index ? 'shadow-2xl scale-105 z-10' : 'shadow-md'}
                 `}
@@ -209,9 +273,8 @@ export default function PropertyComparison() {
                   </div>
                 </div>
 
-                <a
-                  
-                   onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })}
+                <button
+                  onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })}
                   className={`mt-8 self-start flex items-center gap-2 font-semibold text-sm transition-colors duration-300 ease-in-out
                     ${
                       item.isPrimary
@@ -222,11 +285,12 @@ export default function PropertyComparison() {
                 >
                   Learn More
                   <BsArrowRight className="transition-transform group-hover:translate-x-1" />
-                </a>
+                </button>
               </div>
             </SwiperSlide>
           ))}
-        </Swiper>
+          </Swiper>
+        </div>
       </div>
     </section>
   );
