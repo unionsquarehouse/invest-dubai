@@ -157,17 +157,17 @@ const FeatureValue = ({ feature }) => {
   switch (feature.type) {
     case 'price':
       return (
-        <span className="text-sm">
+        <span className="text-sm font-sans">
           {feature.value.split(' ')[0]}
         </span>
       );
     case 'percent':
       return (
-        <div className="flex items-center justify-center font-sans">
+        <div className="flex items-center text-sm justify-center font-sans">
           <CountUp
             end={feature.value}
             duration={2}
-            className="text-sm"
+            className="text-sm font-sans"
             suffix="%"
           />
         </div>
@@ -275,7 +275,7 @@ export default function PropertyComparison() {
 
                 <button
                   onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })}
-                  className={`mt-8 self-start flex items-center gap-2 font-semibold text-sm transition-colors duration-300 ease-in-out
+                  className={`mt-8 font-sans  self-start flex items-center gap-2 font-semibold text-sm transition-colors duration-300 ease-in-out
                     ${
                       item.isPrimary
                         ? 'text-white hover:text-gray-200'
