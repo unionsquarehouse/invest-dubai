@@ -10,22 +10,20 @@ const projects = [
     title: 'Townsquare',
     priceLabel: 'Starting From',
     price: '$204k',
-    location: 'Business Bay, Dubai',
+    location: 'Al Qudra Road',
     image: '/assets/townsquare.webp',
-    description:
-      'Modern apartments in a vibrant family-oriented community with world-class amenities.',
+    description: 'Dubai’s favourite neighborhood that raises your family with you.',
   },
   {
     id: 2,
     title: 'Grand Polo',
     priceLabel: 'Starting From',
     price: ' $1.6M',
-    location: 'Dubai Sports City',
+    location: 'Emaar South',
     image: '/assets/grand-polo.webp',
-    description:
-      'Designed with elegant curves and architectural symmetry, Avana blends organic form with timeless sophistication.',
+    description: 'Dubai’s First Equestrian-Inspired Estate Living',
   },
-   {
+  {
     id: 3,
     title: 'Avana',
     priceLabel: 'Starting From',
@@ -33,9 +31,9 @@ const projects = [
     location: 'Jumeirah Village Circle',
     image: '/assets/avana.webp',
     description:
-      'Luxury villas and townhouses overlooking luxurious equestrian communitiy with premium amenities.',
+      'Serene Apartments with Rooftop Pool in Dubai’s Evolving Heart',
   },
-  
+
   {
     id: 4,
     title: 'Lumena',
@@ -44,7 +42,7 @@ const projects = [
     location: 'Business Bay',
     image: '/assets/lumena.webp',
     description:
-      "Premium commercial spaces in the heart of Dubai's business district with exceptional returns.",
+      "A New Standard in Commercial Real Estate Luxury",
   },
 ];
 
