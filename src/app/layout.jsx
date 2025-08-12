@@ -1,10 +1,9 @@
-import Navigation from '@/components/sections/Navigation';
 import '../styles/index.css';
 const APP_NAME = "Invest In Dubai";
 const APP_DESCRIPTION =
   "Where visionary investments meet infinite possibilities in the world's most dynamic financial hub.";
-const APP_URL = "https://invest-in-dubai-lp.vercel.app";
-const APP_IMAGE = `${APP_URL}/assets/hero-bg.jpg`;
+const APP_URL = "https://https://invest-dubai.vercel.app";
+const APP_IMAGE = `${APP_URL}/images/dubai-skyline.png`;
 
 export const viewport = {
   width: 'device-width',
