@@ -158,7 +158,7 @@ export default function PropertyComparison() {
           {PROPERTY_DATA.map((item, index) => (
             <SwiperSlide key={index}>
               <div
-                className={`group relative rounded-xl px-6 py-10 transition-all duration-500 ease-in-out cursor-pointer h-full flex flex-col justify-between 
+                className={`group relative rounded-xl px-6 py-10 mb-20 transition-all duration-500 ease-in-out cursor-pointer h-full flex flex-col justify-between 
                   ${item.isPrimary ? 'bg-black text-white shadow-2xl' : 'bg-gray-50 hover:bg-gray-100 hover:shadow-lg'}
                   ${hoveredCard === index ? 'shadow-2xl scale-105 z-10' : 'shadow-md'}
                 `}
