@@ -12,7 +12,7 @@ export default function Hero() {
   return (
     <section className="relative w-full overflow-hidden bg-white">
       {/* Top content */}
-      <div className="relative z-10 flex flex-col items-center justify-center px-4 py-16 sm:py-20 md:py-24 text-center">
+      <div className="relative z-10 flex flex-col items-center justify-center px-4 py-4 md:py-24 text-center mt-10">
         <motion.h1
           className="font-['Playfair_Display'] font-bold text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-gray-900"
           variants={fadeInUp}
@@ -59,7 +59,7 @@ export default function Hero() {
       </div>
 
       {/* Skyline image */}
-      <div className="relative w-full min-h-[60vh] sm:min-h-[70vh] md:min-h-[80vh]">
+      <div className="relative w-full min-h-[50vh]  md:min-h-[80vh]">
         <Image
           src="/images/dubai-skyline.png"
           alt="Dubai Skyline"
